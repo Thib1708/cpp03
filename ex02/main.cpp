@@ -6,7 +6,7 @@
 /*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 14:43:44 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/17 18:00:52 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/05/17 18:10:22 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int main( void )
 	elias.attack("Tibo");
 	elias.beRepaired(10);
 	elias.attack("Tibo");
+	greg.highFivesGuys();
 	return (0);
 }

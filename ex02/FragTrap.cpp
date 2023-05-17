@@ -6,7 +6,7 @@
 /*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 17:54:35 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/17 18:02:56 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/05/17 18:09:52 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ void	FragTrap::attack( const std::string &target ) {
 }
 
 void	FragTrap::highFivesGuys( void ) {
-	std::cout << "[ FRAGTRAP ] " << this->_name << " make you a high fives" << std::endl;
+	std::cout << "[ FRAGTRAP ] " << this->_name << " ask you a high fives" << std::endl;
 	return ;
 }
