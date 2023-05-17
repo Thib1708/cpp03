@@ -6,7 +6,7 @@
 /*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:01:35 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/17 18:02:41 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/05/17 18:02:56 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ScavTrap::attack( const std::string &target ) {
 	}
 	if (this->_hit_points == 0)
 	{
-		std::cout << "[ SCAVTRAP ] " << this->_name << " is dead, it can't attack" << std::endl;
+		std::cout << "[ SCAVTRAP ] " << this->_name << " is dead, he can't attack" << std::endl;
 		return ;
 	}
 	std::cout << "[ SCAVTRAP ] " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
