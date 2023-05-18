@@ -6,13 +6,13 @@
 /*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 14:43:44 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/17 18:10:22 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/05/18 11:34:58 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "../includes/ClapTrap.hpp"
+#include "../includes/ScavTrap.hpp"
+#include "../includes/FragTrap.hpp"
 
 int main( void )
 {

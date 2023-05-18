@@ -6,12 +6,17 @@
 /*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:01:35 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/18 11:11:45 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/05/18 11:35:23 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "../includes/ClapTrap.hpp"
+#include "../includes/ScavTrap.hpp"
+
+ScavTrap::ScavTrap( void ) {
+	std::cout << "[ SCAVTRAP ] created" << std::endl;
+	return ;
+}
 
 ScavTrap::ScavTrap( std::string name ) {
 	std::cout << "[ SCAVTRAP ] " << name << " created" << std::endl;
@@ -25,11 +30,11 @@ ScavTrap::~ScavTrap( void ) {
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& s)
 {
-        this->_name = s._name;
-        this->_attack_damage = s._attack_damage;
-        this->_energy_points = s._energy_points;
-        this->_hit_points = s._hit_points;
-        return *this;
+	this->_name = s._name;
+	this->_attack_damage = s._attack_damage;
+	this->_energy_points = s._energy_points;
+	this->_hit_points = s._hit_points;
+	return *this;
 }
 
 void	ScavTrap::attack( const std::string &target ) {
@@ -40,7 +45,7 @@ void	ScavTrap::attack( const std::string &target ) {
 	}
 	if (this->_hit_points == 0)
 	{
-		std::cout << "[ SCAVTRAP ] " << this->_name << " is dead, it can't attack" << std::endl;
+		std::cout << "[ SCAVTRAP ] " << this->_name << " is dead, he can't attack" << std::endl;
 		return ;
 	}
 	std::cout << "[ SCAVTRAP ] " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;

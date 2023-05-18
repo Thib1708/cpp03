@@ -6,11 +6,11 @@
 /*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/17 18:06:06 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/05/18 11:34:58 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../includes/ClapTrap.hpp"
 
 ClapTrap::ClapTrap( std::string name ) {
 	std::cout << "[ CLAPTRAP ] " << name << " created" << std::endl;
@@ -32,6 +32,15 @@ ClapTrap::ClapTrap( void ) {
 ClapTrap::~ClapTrap( void ) {
 	std::cout << "[ CLAPTRAP ] " << this->_name << " destroyed" << std::endl;
 	return ;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& c)
+{
+	this->_name = c._name;
+	this->_attack_damage = c._attack_damage;
+	this->_energy_points = c._energy_points;
+	this->_hit_points = c._hit_points;
+	return *this;
 }
 
 void	ClapTrap::attack( const std::string &target ) {

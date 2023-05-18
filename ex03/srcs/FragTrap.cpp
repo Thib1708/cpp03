@@ -6,12 +6,17 @@
 /*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 17:54:35 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/17 18:09:52 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/05/18 11:35:23 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#include "../includes/ClapTrap.hpp"
+#include "../includes/FragTrap.hpp"
+
+FragTrap::FragTrap( void ) {
+	std::cout << "[ FRAGTRAP ] created" << std::endl;
+	return  ;
+}
 
 FragTrap::FragTrap( std::string name ) {
 	std::cout << "[ FRAGTRAP ] " << name << " created" << std::endl;
@@ -19,11 +24,21 @@ FragTrap::FragTrap( std::string name ) {
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
+	return ;
 }
 
 FragTrap::~FragTrap( void ) {
 	std::cout << "[ FRAGTRAP ] " << this->_name << " destroyed" << std::endl;
 	return ;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& f)
+{
+	this->_name = f._name;
+	this->_attack_damage = f._attack_damage;
+	this->_energy_points = f._energy_points;
+	this->_hit_points = f._hit_points;
+	return *this;
 }
 
 void	FragTrap::attack( const std::string &target ) {

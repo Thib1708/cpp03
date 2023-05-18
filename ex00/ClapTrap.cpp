@@ -6,7 +6,7 @@
 /*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/17 14:48:20 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/05/18 11:08:22 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@ ClapTrap::ClapTrap( std::string name) {
 ClapTrap::~ClapTrap( void ) {
 	std::cout << "Destructor called" << std::endl;
 	return ;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& c)
+{
+	this->_name = c._name;
+	this->_attack_damage = c._attack_damage;
+	this->_energy_points = c._energy_points;
+	this->_hit_points = c._hit_points;
+	return *this;
 }
 
 void	ClapTrap::attack( const std::string &target ) {

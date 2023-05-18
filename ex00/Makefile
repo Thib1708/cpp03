@@ -6,7 +6,7 @@
 #    By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 11:12:25 by tgiraudo          #+#    #+#              #
-#    Updated: 2023/05/17 14:47:11 by thibaultgir      ###   ########.fr        #
+#    Updated: 2023/05/18 11:39:15 by thibaultgir      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ ${DIR_OBJS}%.o 	:	%.c Makefile
 				@${CC} ${FLAGS} ${STD} -c $< -o $@ 
 				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"
 
-${NAME}			:	${OBJS}
+${NAME}			:	${OBJS} ClapTrap.hpp
 				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"
 				@${PRINT} "\n${YELLOW}Compiling ${NAME}...${DEFAULT}"
 				@${CC} ${OBJS} -o ${NAME}

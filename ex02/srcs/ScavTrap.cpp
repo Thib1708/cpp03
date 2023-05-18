@@ -6,12 +6,12 @@
 /*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:01:35 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/17 18:02:56 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/05/18 11:34:58 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "../includes/ClapTrap.hpp"
+#include "../includes/ScavTrap.hpp"
 
 ScavTrap::ScavTrap( std::string name ) {
 	std::cout << "[ SCAVTRAP ] " << name << " created" << std::endl;
@@ -21,6 +21,15 @@ ScavTrap::ScavTrap( std::string name ) {
 ScavTrap::~ScavTrap( void ) {
 	std::cout << "[ SCAVTRAP ] " << this->_name << " destroyed" << std::endl;
 	return ;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& s)
+{
+        this->_name = s._name;
+        this->_attack_damage = s._attack_damage;
+        this->_energy_points = s._energy_points;
+        this->_hit_points = s._hit_points;
+        return *this;
 }
 
 void	ScavTrap::attack( const std::string &target ) {

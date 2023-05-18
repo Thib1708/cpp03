@@ -6,17 +6,23 @@
 #    By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 11:12:25 by tgiraudo          #+#    #+#              #
-#    Updated: 2023/05/18 11:38:52 by thibaultgir      ###   ########.fr        #
+#    Updated: 2023/05/18 11:38:31 by thibaultgir      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # VARIABLE
 
-NAME			=	ScavTrap
+NAME			=	DiamondTrap
 
 LIST_SRCS		=	main.cpp		\
 					ClapTrap.cpp	\
 					ScavTrap.cpp	\
+					FragTrap.cpp	\
+
+LIST_INCS		=	ClapTrap.hpp	\
+					DiamondTrap.hpp	\
+					FragTrap.hpp	\
+					ScavTrap.hpp	\
 
 # DIRECTORY
 DIR_OBJS		=	.objs/
@@ -39,7 +45,7 @@ OBJS 			=	$(patsubst %.c, $(DIR_OBJS)%.o, $(SRCS))
 
 SRCS			=	${addprefix ${DIR_SRCS}, ${LIST_SRCS}}
 
-INCLUDES		=	${addprefix ${DIR_INCS}, ${HEADERS}}
+INCLUDES		=	${addprefix ${DIR_INCS}, ${LIST_INCS}}
 
 # COLOR
 
@@ -57,7 +63,7 @@ ${DIR_OBJS}%.o 	:	%.c Makefile
 				@${CC} ${FLAGS} ${STD} -c $< -o $@ 
 				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"
 
-${NAME}			:	${OBJS} ScavTrap.hpp ClapTrap.hpp
+${NAME}			:	${OBJS} ${INCLUDES}
 				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"
 				@${PRINT} "\n${YELLOW}Compiling ${NAME}...${DEFAULT}"
 				@${CC} ${OBJS} -o ${NAME}
