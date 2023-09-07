@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:01:35 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/18 11:34:58 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/07 12:44:32 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ClapTrap.hpp"
-#include "../includes/ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap( void ) {
+	std::cout << "[ SCAVTRAP ] created" << std::endl;
+}
 
 ScavTrap::ScavTrap( std::string name ) {
 	std::cout << "[ SCAVTRAP ] " << name << " created" << std::endl;
@@ -19,17 +23,23 @@ ScavTrap::ScavTrap( std::string name ) {
 }
 
 ScavTrap::~ScavTrap( void ) {
-	std::cout << "[ SCAVTRAP ] " << this->_name << " destroyed" << std::endl;
+	std::cout << "[ SCAVTRAP ] " << this->_name << "'s destructor called" << std::endl;
 	return ;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& s)
 {
-        this->_name = s._name;
-        this->_attack_damage = s._attack_damage;
-        this->_energy_points = s._energy_points;
-        this->_hit_points = s._hit_points;
-        return *this;
+	std::cout << "[ SCAVTRAP ] " << s._name << " assigned." << std::endl;
+	this->_name = s._name;
+	this->_attack_damage = s._attack_damage;
+	this->_energy_points = s._energy_points;
+	this->_hit_points = s._hit_points;
+	return *this;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& s): ClapTrap(s)
+{
+	std::cout << "[ SCAVTRAP ] " << s._name << " copied." << std::endl;
 }
 
 void	ScavTrap::attack( const std::string &target ) {
@@ -40,7 +50,7 @@ void	ScavTrap::attack( const std::string &target ) {
 	}
 	if (this->_hit_points == 0)
 	{
-		std::cout << "[ SCAVTRAP ] " << this->_name << " is dead, he can't attack" << std::endl;
+		std::cout << "[ SCAVTRAP ] " << this->_name << " is dead" << std::endl;
 		return ;
 	}
 	std::cout << "[ SCAVTRAP ] " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;

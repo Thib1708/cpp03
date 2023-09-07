@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+         #
+#    By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 11:12:25 by tgiraudo          #+#    #+#              #
-#    Updated: 2023/05/18 11:38:02 by thibaultgir      ###   ########.fr        #
+#    Updated: 2023/09/07 12:45:34 by tgiraudo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ MAKEFLAGS		+=	--no-print-directory
 
 CC 				=	c++
 
-OBJS 			=	$(patsubst %.c, $(DIR_OBJS)%.o, $(SRCS))
+OBJS 			=	$(patsubst %.cpp, $(DIR_OBJS)%.o, $(SRCS))
 
 SRCS			=	${addprefix ${DIR_SRCS}, ${LIST_SRCS}}
 
@@ -61,8 +61,7 @@ DEFAULT 		=	\033[0m
 ${DIR_OBJS}%.o 	:	%.cpp Makefile
 				@mkdir -p $(shell dirname $@)
 				@${PRINT} "${YELLOW}${SUPPR}Creating ${NAME}'s objects : $@${DEFAULT}"
-				@${CC} ${FLAGS} ${STD} -c $< -o $@ 
-				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"
+				@${CC} ${FLAGS} ${STD} -I ${DIR_INCS} -c $< -o $@ 
 
 ${NAME}			:	${OBJS} ${INCLUDES}
 				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 14:43:44 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/05/18 11:34:58 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/07 12:48:06 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ClapTrap.hpp"
-#include "../includes/ScavTrap.hpp"
-#include "../includes/FragTrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void )
 {
